@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-indent: 20px;
+
+}
+.context{
+    padding: 10px;
+    margin-top: 2em;
+    margin-bottom: 20px;
+    border: 1px solid black;
+        position: relative;
+}
+.image{
+    float: left;
+    margin-right: 10px;
+}
+.vote{
+    position: absolute;
+    right: 50px;
+    bottom: 5px;
+    font-size: 20px;
+    color: red;
+    text-decoration: none;
+}
+.vote-amount{
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
