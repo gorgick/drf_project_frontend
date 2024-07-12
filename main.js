@@ -1,4 +1,22 @@
 
+let loginBtn = document.querySelector('#login-btn')
+let logoutBtn = document.querySelector('#logout-btn')
+
+let token = localStorage.getItem('token')
+
+if (token){
+    loginBtn.remove()
+}else{
+    logoutBtn.remove()
+}
+
+logoutBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    localStorage.removeItem('token')
+    window.location = 'file:///C:/Users/gorgick/PycharmProjects/drf_project_frontend/login.html'
+})
+
+
 let projectsUrl = 'http://127.0.0.1:8000/blog/'
 
 let getProjects = () => {
@@ -35,7 +53,7 @@ let addVoteEvents = () => {
     let voteBtns = document.querySelectorAll('.vote')
     voteBtns.forEach((btn, i) => {
         btn.addEventListener('click', (e) => {
-            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIwNzAyMjM1LCJpYXQiOjE3MjA3MDA0MzUsImp0aSI6ImUyMmVlMGQ5YmY3NDRlNWY5OGUzZmRhMTk2YWFjOWQ0IiwidXNlcl9pZCI6MX0.fBOeW4-flHvczNWkZ1NDGZ5IP4-WteRtRFX7roEm0-U'
+            let token = localStorage.getItem('token')
             let vote = e.target.dataset.vote
             let blog = e.target.dataset.blog
 
