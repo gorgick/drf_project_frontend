@@ -48,3 +48,14 @@ body{
     border-radius: 5px;
     padding: 2em;
 }
+p{
+    font-family: Bradley Hand, cursive;
+}
+.comments{
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative;
+    background-color: darkseagreen;
+}

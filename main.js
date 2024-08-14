@@ -31,8 +31,8 @@ let getProjects = () => {
 let buildProjects = (blogs) => {
     let blogsWrapper = document.querySelector('.container')
     blogsWrapper.innerHTML = ''
-    blogs.forEach(blog => {
-            let blogCard = `
+    blogs.forEach(function(blog) {
+        let blogCard = `
             <div class="context">
                 <img class='image' src="https://placehold.co/200x150" alt="">
                 <div>
@@ -40,11 +40,20 @@ let buildProjects = (blogs) => {
                     <h4>${blog.title}</h4>
                     <p>${blog.article}</p>
                 </div>
-                <strong class='vote'>&#10084;</strong>
+                <strong class='vote' data-vote="True" data-blog="${blog.id}">&#10084;</strong>
                 <strong class="vote-amount">${blog.likes_count}</strong>
             </div>
         `
-            blogsWrapper.innerHTML += blogCard
+        blogsWrapper.innerHTML += blogCard
+        blog.comments.forEach(function(comment) {
+            let commentCard = `
+            <div class="comments">
+                <h3>${comment.owner_name}</h3>
+                <p>${comment.text}</p>
+            </div>
+            `
+            blogsWrapper.innerHTML += commentCard
+        })
     })
     addVoteEvents()
 }
