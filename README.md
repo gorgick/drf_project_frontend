@@ -12,4 +12,4 @@ Realized:
 
 Necessary for work - up "drf_tests_optimization"
 
-![Image alt](https://github.com/gorgick/drf_project_fronend/raw/master/frontend.png)
+![Image alt](https://github.com/gorgick/drf_project_frontend/raw/master/frontend.png)
